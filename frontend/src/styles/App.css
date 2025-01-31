@@ -1,0 +1,329 @@
+/* App.css */
+
+/* Global Styles */
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: 'Verdana', sans-serif;
+}
+
+/* Headers and Titles */
+h2 {
+  color: #76c7c0;
+}
+
+.form-check-input:checked + .form-check-label,
+.form-check-input:checked ~ .form-check-label {
+  color: #76c7c0; /* Custom color */
+  user-select: none; 
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.form-check-input:checked {
+  background-color: #76c7c0;
+  border-color: #76c7c0;
+}
+
+/* Admin Page */
+.admin-container {
+  margin: 20px;
+  padding: 20px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab-button {
+  flex: 1;
+  background-color: #2e2e2e;
+  color: #76c7c0;
+  border: 2px solid #76c7c0;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  user-select: none; 
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.tab-button:hover {
+  background-color: #76c7c0;
+  color: #121212;
+}
+
+.tab-button.active {
+  background-color: #76c7c0;
+  color: #121212;
+}
+
+/* Forms */
+.form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.form-card {
+  margin-bottom: 30px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #76c7c0;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #76c7c0;
+  border-radius: 5px;
+  background-color: #2e2e2e;
+  color: #e0e0e0;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  outline: none;
+  border-color: #8de7df;
+}
+
+.checkbox-group {
+  margin: 10px 0;
+  color: #76c7c0;
+}
+
+.submit-btn {
+  background-color: #76c7c0;
+  color: #121212;
+  padding: 10px 20px;
+  margin-top: 9px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none; 
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.submit-btn:hover {
+  background-color: #8de7df;
+}
+
+.form-check-input:checked + .form-check-label {
+   color: #76c7c0;; /* Custom color for active radio button label */
+}
+
+.form-check-input:checked {
+   color: #e0e0e0;; /* Custom radio button color */
+   border-color:#76c7c0;;
+}
+
+/* Tables */
+.main-table {
+  margin-top: -4px;
+}
+
+.main-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #2e2e2e;
+  color: #e0e0e0;
+  border: 1px solid #76c7c0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.main-table th,
+.main-table td {
+  padding: 10px;
+  text-align: left;
+}
+
+.main-table th {
+  background-color: #3a3a3a;
+  color: #76c7c0;
+  font-weight: bold;
+}
+
+.main-table tr:nth-child(even) {
+  background-color: #262626;
+}
+
+.main-table tr:hover {
+  background-color: #383838;
+}
+
+.action-buttons .action-btn {
+  background-color: transparent;
+  color: #76c7c0;
+  border: 1px solid #76c7c0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.action-buttons .action-btn:hover {
+  background-color: #76c7c0;
+  color: #121212;
+}
+
+/* Card (Register/Login) */
+.card {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.card .form-outline {
+  margin-bottom: 15px;
+}
+
+.card .form-outline label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #76c7c0;
+}
+
+.card .form-outline input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #76c7c0;
+  border-radius: 5px;
+  background-color: #2e2e2e;
+  color: #e0e0e0;
+}
+
+.card .form-outline input:focus {
+  outline: none;
+  border-color: #8de7df;
+}
+
+.card .btn {
+  width: 100%;
+  background-color: #76c7c0;
+  color: #121212;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card .btn:hover {
+  background-color: #8de7df;
+}
+
+.card .text-center {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.card .text-center a {
+  color: #76c7c0;
+  text-decoration: none;
+}
+
+.card .text-center a:hover {
+  color: #8de7df;
+  text-decoration: underline;
+}
+
+/* Error Messages */
+.error-message {
+  color: red;
+  font-size: 14px;
+}
+/* logout BUTTON*/
+.logout-btn {
+  flex: 1; 
+  background-color: #2e2e2e;
+  color: #76c7c0;
+  border: 2px solid #76c7c0;
+  padding: 10px;
+/*  margin-top: 40px; */
+/*   margin-left: 170px; */
+/*  display: block; */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  user-select: none; 
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.logout-btn:hover {
+  background-color: #76c7c0;
+  color: #121212;
+}
+.logout-btn-home {
+  flex: 1; 
+  background-color: #2e2e2e;
+  color: #76c7c0;
+  border: 2px solid #76c7c0;
+  padding: 10px;
+  margin-top: 24px; 
+  margin-left: 4x; 
+/*  display: block; */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  user-select: none; 
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.logout-btn-home:hover {
+  background-color: #76c7c0;
+  color: #121212;
+}
+
+.text-center {
+  color: #fff;
+ /* color: #76c7c0;*/
+}
+a {
+  color: #76c7c0;
+}
+a:link {
+  color: #76c7c0;
+}
+
+a:visited {
+  color: #76c7c0;
+}
+
+a:hover {
+  color: #76c7c0;
+}
+
+a:active {
+  color: #76c7c0;
+}  
