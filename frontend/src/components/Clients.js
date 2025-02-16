@@ -84,55 +84,55 @@ const Clients = () => {
   return (
     <div className="form-container">
       <div className="form-card">
-        <h2 className="editing-heading">{editingClient ? "Редактировать клиента" : "Добавить клиента"}</h2>
+        <h2 className="editing-heading">{editingClient ? "Update client" : "Add client"}</h2>
         <form onSubmit={editingClient ? handleUpdateClient : handleCreateClient}>
           <div className="input-group">
-            <label>Имя</label>
+            <label>First name</label>
             <input
               type="text"
               name="first_name"
               value={newClient.first_name}
-              placeholder="Введите имя"
+              placeholder="First name"
               onChange={handleInputChange}
             />
           </div>
           <div className="input-group">
-            <label>Фамилия</label>
+            <label>Last name</label>
             <input
               type="text"
               name="last_name"
               value={newClient.last_name}
-              placeholder="Введите фамилию"
+              placeholder="Last name"
               onChange={handleInputChange}
             />
           </div>
           <div className="input-group">
-            <label>Почта</label>
+            <label>Email</label>
             <input
               type="email"
               name="email"
               value={newClient.email}
-              placeholder="Введите почту"
+              placeholder="Email"
               onChange={handleInputChange}
             />
           </div>
           <div className="input-group">
-            <label>Телефон</label>
+            <label>Phone number</label>
             <input
               type="text"
               name="phone"
               value={newClient.phone}
-              placeholder="Введите номер телефона"
+              placeholder="Phone number"
               onChange={handleInputChange}
             />
           </div>
           <div className="input-group">
-            <label>Пароль</label>
+            <label>Password</label>
             <input
               type="password"
               name="password"
               value={newClient.password}
-              placeholder="Введите пароль"
+              placeholder="Password"
               onChange={handleInputChange}
             />
           </div>
@@ -146,13 +146,13 @@ const Clients = () => {
                 checked={newClient.is_admin}
                 onChange={handleInputChange}
               />
-              Админ
+              Admin
             </label>
           </div>
          
 
           <button type="submit" className="submit-btn">
-            {editingClient ? "Обновить клиента" : "Добавить клиента"}
+            {editingClient ? "Update client" : "Add client"}
           </button>
         </form>
       </div>
@@ -162,13 +162,13 @@ const Clients = () => {
           <table>
             <thead>
               <tr>
-                <th>Имя</th>
-                <th>Фамилия</th>
-                <th>Почта</th>
-                <th>Номер телефона</th>
-                <th>Пароль</th>
-                <th>Является админом</th>
-                <th>Действия</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Email</th>
+                <th>Phone number</th>
+                <th>Password</th>
+                <th>Admin</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -178,20 +178,20 @@ const Clients = () => {
                   <td>{client.last_name}</td>
                   <td>{client.email}</td>
                   <td>{client.phone}</td>
-                  <td>Скрыт</td>
-                  <td>{client.is_admin ? "Да" : "Нет"}</td>
+                  <td>Hidden</td>
+                  <td>{client.is_admin ? "Yes" : "No"}</td>
                   <td className="action-buttons">
                     <button
                       className="action-btn"
                       onClick={() => handleEditClient(client)}
                     >
-                      Редактировать
+                      Edit
                     </button>
                     <button
                       className="action-btn"
                       onClick={() => handleDeleteClient(client.id)}
                     >
-                      Удалить
+                      Delete
                     </button>
                   </td>
                 </tr>

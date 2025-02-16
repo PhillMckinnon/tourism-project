@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-//import "./home.css";
 const Home = ( { handleLogout } ) => {
   const [bookings, setBookings] = useState([]);
   const [tours, setTours] = useState([]);
@@ -51,18 +50,18 @@ const Home = ( { handleLogout } ) => {
     }, [email]);
   const formatDate = (date) => {
       const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
-      return new Date(date).toLocaleDateString('en-GB', options); // 'en-GB' gives you the format DD/MM/YYYY
+      return new Date(date).toLocaleDateString('en-GB', options); // DD/MM/YYYY
   };
 
 const bookTour = async (e, tourId) => {
-  e.preventDefault(); // Prevent page refresh
+  e.preventDefault(); 
   if (!clientId) return;
   try {
     await axios.post("http://192.168.66.59:5000/api/bookings", {
       client_id: clientId,
       tour_id: tourId,
       booking_date: new Date().toISOString(),
-      status: "в обработке",
+      status: "Pending",
     });
     window.location.reload();
   } catch (error) {
@@ -94,25 +93,27 @@ const bookTour = async (e, tourId) => {
   return (
     <div className="form-container">
       <div className="form-card">
-        <h2>📍Забронировать</h2>
+        <h2>📍Book a tour</h2>
 <form onSubmit={(e) => bookTour(e, newBooking.tour_id)}>
           <div className="input-group">
-            <label>Тур</label>
+            <label>Tour</label>
             <select
               name="tour_id"
               value={newBooking.tour_id}
               onChange={handleInputChange}
             >
-              <option value="">Выберите тур</option>
-              {tours.map((tour) => (
-                <option key={tour.id} value={tour.id}>
-                  {tour.name}
+              <option value="">Choose a tour</option>
+              {tours
+                .filter((tour) => tour.available)
+                .map((tour) => (
+                  <option key={tour.id} value={tour.id}>
+                {tour.name}
                 </option>
               ))}
             </select>
           </div>
           <button type="submit" className="submit-btn">
-            Забронировать
+            Book this tour
           </button>
         </form>
       </div>
@@ -122,12 +123,12 @@ const bookTour = async (e, tourId) => {
           <table>
             <thead>
               <tr>
-                <th>Тур</th>
-                <th>Дата бронирования</th>
-                <th>Дата отправления</th>
-                <th>Дата возвращения</th>
-                <th>Статус</th>
-                <th>Действия</th>
+                <th>Tour</th>
+                <th>Booking date</th>
+                <th>Departure date</th>
+                <th>Return date</th>
+                <th>Status</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -143,7 +144,7 @@ const bookTour = async (e, tourId) => {
                       className="action-btn"
                       onClick={() => handleDeleteBooking(booking.id)}
                     >
-                      Отменить
+                      Cancel
                     </button>
                   </td>
                 </tr>
@@ -153,7 +154,7 @@ const bookTour = async (e, tourId) => {
         </div>
 
       </div>
- <button className="logout-btn-home" onClick={handleLogout}>Выйти</button>
+ <button className="logout-btn-home" onClick={handleLogout}>Exit</button>
 
     </div>
 

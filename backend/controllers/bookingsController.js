@@ -4,19 +4,19 @@ exports.createBooking = async (req, res) => {
     try {
         const { client_id, tour_id, booking_date, status } = req.body;
 
-        // Check if the client exists
+
         const client = await Client.findByPk(client_id);
         if (!client) {
             return res.status(404).json({ message: "client not found!" });
         }
 
-        // Check if the tour exists
+
         const tour = await Tour.findByPk(tour_id);
         if (!tour) {
             return res.status(404).json({ message: "tour not found!" });
         }
 
-        // Create the booking
+
         const newBooking = await Bookings.create({
             client_id,
             tour_id,
@@ -31,7 +31,7 @@ exports.createBooking = async (req, res) => {
     }
 };
 
-// Get all bookings
+
 exports.getAllBookings = async (req, res) => {
     try {
         const bookings = await Bookings.findAll({
@@ -56,7 +56,7 @@ exports.getAllBookings = async (req, res) => {
     }
 };
 
-// Get a single booking by ID
+
 exports.getBookingById = async (req, res) => {
     try {
         const { id } = req.params;
@@ -86,7 +86,7 @@ exports.getBookingById = async (req, res) => {
     }
 };
 
-// Update a booking
+
 exports.updateBooking = async (req, res) => {
     try {
         const { id } = req.params;

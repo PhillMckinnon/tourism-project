@@ -65,7 +65,7 @@ function App() {
 
   
   if (isAdmin === null) {
-    return <div>Загрузка...</div>; // Or a loading spinner component
+    return <div>Loading please wait...</div>; 
   }
 
   return (

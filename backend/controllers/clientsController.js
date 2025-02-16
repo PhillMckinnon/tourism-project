@@ -37,7 +37,7 @@ const createClient = async (req, res) => {
       return res.status(400).json({ error: "First name, last name, email, and password are required!" });
     }
 
-    // Hash the password
+
     const salt = await bcrypt.genSalt(10); 
     const hashedPassword = await bcrypt.hash(password, salt); 
 
@@ -64,7 +64,7 @@ const updateClient = async (req, res) => {
     const clientId = req.params.id;
     const email_Lower = email.toLowerCase();
 
-    // Find client to update
+
     const client = await Client.findByPk(clientId);
     if (!client) {
       return res.status(404).json({ error: "client not found!" });
@@ -72,7 +72,7 @@ const updateClient = async (req, res) => {
 
     let updatedFields = { first_name, last_name, email: email_Lower, phone, is_admin };
 
-    // If password is provided, hash it
+
     if (password) {
       const salt = await bcrypt.genSalt(10);
       const hashedPassword = await bcrypt.hash(password, salt);

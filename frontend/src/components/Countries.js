@@ -90,51 +90,51 @@ const Countries = () => {
   return (
     <div className="form-container">
       <div className="form-card">
-        <h2 className="editing-heading">{editingCountry ? "Редактировать страну" : "Добавить страну"}</h2>
+        <h2 className="editing-heading">{editingCountry ? "Update country" : "Add country"}</h2>
         <form onSubmit={editingCountry ? handleUpdateCountry : handleCreateCountry}>
           <div className="input-group">
-            <label>Название страны</label>
+            <label>Country name</label>
             <input
               type="text"
               name="name"
               value={newCountry.name}
-              placeholder="Введите название страны"
+              placeholder="Country name"
               onChange={handleInputChange}
             />
           </div>
           <div className="input-group">
-            <label>Код валюты</label>
+            <label>Currency code</label>
             <input
               type="text"
               name="currency_code"
               value={newCountry.currency_code}
-              placeholder="Введите код валюты"
+              placeholder="Currency code"
               onChange={handleInputChange}
             />
           </div>
           <div className="input-group">
-            <label>Код языка</label>
+            <label>Language code</label>
             <input
               type="text"
               name="language_code"
               value={newCountry.language_code}
-              placeholder="Введите код языка"
+              placeholder="Language code"
               onChange={handleInputChange}
             />
           </div>
           <div className="input-group">
-            <label>Код региона</label>
+            <label>Region code</label>
             <input
               type="text"
               name="region_code"
               value={newCountry.region_code}
-              placeholder="Введите код региона"
+              placeholder="Region code"
               onChange={handleInputChange}
             />
           </div>
 
           <button type="submit" className="submit-btn">
-            {editingCountry ? "Обновить страну" : "Добавить страну"}
+            {editingCountry ? "Update country" : "Add country"}
           </button>
         </form>
       </div>
@@ -144,11 +144,11 @@ const Countries = () => {
           <table>
             <thead>
               <tr>
-                <th>Название страны</th>
-                <th>Код валюты</th>
-                <th>Код языка</th>
-                <th>Код региона</th>
-                <th>Действия</th>
+                <th>Country name</th>
+                <th>Currency code</th>
+                <th>Language code</th>
+                <th>Region code</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -163,13 +163,13 @@ const Countries = () => {
                       className="action-btn"
                       onClick={() => handleEditCountry(country)}
                     >
-                      Редактировать
+                      Edit
                     </button>
                     <button
                       className="action-btn"
                       onClick={() => handleDeleteCountry(country.id)}
                     >
-                      Удалить
+                      Delete
                     </button>
                   </td>
                 </tr>

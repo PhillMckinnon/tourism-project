@@ -19,32 +19,32 @@ function Register() {
         e.preventDefault();
 
         if (!nameRegex.test(firstName)) {
-            setError('Ошибка, используйте только разрешенные символы.');
+            setError('Error, use appropriate symbols only!.');
             return;
         }
 
         if (!nameRegex.test(lastName)) {
-            setError('Ошибка, используйте только разрешенные символы.');
+            setError('Error, use appropriate symbols only!.');
             return;
         }
 
         if (!emailRegex.test(email)) {
-            setError('Ошибка, используйте только разрешенные символы.');
+            setError('Error, use appropriate symbols only!.');
             return;
         }
 
         if (!phoneRegex.test(phone)) {
-            setError('Ошибка, используйте только разрешенные символы.');
+            setError('Error, use appropriate symbols only!.');
             return;
         }
 
         if (password.length < 6) {
-            setError('Ошибка, используйте только разрешенные символы.');
+            setError('Error, use appropriate symbols only!.');
             return;
         }
 
         if (password !== repeatPassword) {
-            setError('Ошибка, используйте только разрешенные символы.');
+            setError('Error, use appropriate symbols only!.');
             return;
         }
 
@@ -57,83 +57,83 @@ function Register() {
                 phone,
                 password,
             });
-            navigate('/login'); // Redirect to login page after successful registration
+            navigate('/login'); 
         } catch (err) {
             console.error(err.response?.data || err.message);
-            setError('Регистрация не удалась, попробуйте еще раз..');
+            setError('Failed to register, try again later..');
         }
     };
 
     return (
         <div className="card">
-            <h2>Создать учетную запись</h2>
+            <h2>Register</h2>
             <form onSubmit={handleSubmit}>
                 <div className="form-outline">
-                    <label htmlFor="first_name">Имя</label>
+                    <label htmlFor="first_name">First name</label>
                     <input
                         type="text"
                         id="first_name"
-                        placeholder="Имя"
+                        placeholder="First name"
                         value={firstName}
                         onChange={(e) => setFirstName(e.target.value)}
                     />
                 </div>
                 <div className="form-outline">
-                    <label htmlFor="last_name">Фамилия</label>
+                    <label htmlFor="last_name">Last name</label>
                     <input
                         type="text"
                         id="last_name"
-                        placeholder="Фамилия"
+                        placeholder="Last name"
                         value={lastName}
                         onChange={(e) => setLastName(e.target.value)}
                     />
                 </div>
                 <div className="form-outline">
-                    <label htmlFor="email">Почта</label>
+                    <label htmlFor="email">Email</label>
                     <input
                         type="email"
                         id="email"
-                        placeholder="Почта"
+                        placeholder="Email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
                 </div>
                 <div className="form-outline">
-                    <label htmlFor="phone">Телефон</label>
+                    <label htmlFor="phone">Phone number</label>
                     <input
                         type="text"
                         id="phone"
-                        placeholder="Телефон"
+                        placeholder="Phone number"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                     />
                 </div>
                 <div className="form-outline">
-                    <label htmlFor="password">Пароль</label>
+                    <label htmlFor="password">Password</label>
                     <input
                         type="password"
                         id="password"
-                        placeholder="Пароль"
+                        placeholder="Password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </div>
                 <div className="form-outline">
-                    <label htmlFor="repeat_password">Повторите пароль</label>
+                    <label htmlFor="repeat_password">Repeat password</label>
                     <input
                         type="password"
                         id="repeat_password"
-                        placeholder="Повторите пароль"
+                        placeholder="Repeat password"
                         value={repeatPassword}
                         onChange={(e) => setRepeatPassword(e.target.value)}
                     />
                 </div>
                 {error && <p style={{ color: 'red' }}>{error}</p>}
                 <button type="submit" className="btn">
-                    Зарегистрировать
+                    Register
                 </button>
                 <p className="text-center">
-                    Уже есть учетная запись? <a className="linkhref" href="/login">Войти</a>
+                    Already registered? <a className="linkhref" href="/login">Log in</a>
                 </p>
             </form>
         </div>

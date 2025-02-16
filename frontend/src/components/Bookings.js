@@ -79,6 +79,7 @@ const Bookings = () => {
           )
         );
         resetForm();
+        window.location.reload();
       })
       .catch((err) => console.error(err));
   };
@@ -96,23 +97,23 @@ const Bookings = () => {
       client_id: "",
       tour_id: "",
       booking_date: "",
-      status: "В обработке",
+      status: "Pending",
     });
   };
 
   return (
     <div className="form-container">
       <div className="form-card">
-        <h2 className="editing-heading">{editingBooking ? "Редактировать бронь" : "Добавить бронь"}</h2>
+        <h2 className="editing-heading">{editingBooking ? "Update booking" : "Add booking"}</h2>
         <form onSubmit={editingBooking ? handleUpdateBooking : handleCreateBooking}>
           <div className="input-group">
-            <label>Клиент</label>
+            <label>Client</label>
             <select
               name="client_id"
               value={newBooking.client_id}
               onChange={handleInputChange}
             >
-              <option value="">Выберите клиента</option>
+              <option value="">Choose a client</option>
               {clients.map((client) => (
                 <option key={client.id} value={client.id}>
                   {client.email}
@@ -121,13 +122,13 @@ const Bookings = () => {
             </select>
           </div>
           <div className="input-group">
-            <label>Тур</label>
+            <label>Tour</label>
             <select
               name="tour_id"
               value={newBooking.tour_id}
               onChange={handleInputChange}
             >
-              <option value="">Выберите тур</option>
+              <option value="">Choose a tour</option>
               {tours.map((tour) => (
                 <option key={tour.id} value={tour.id}>
                   {tour.name}
@@ -136,7 +137,7 @@ const Bookings = () => {
             </select>
           </div>
           <div className="input-group">
-            <label>Дата бронирования</label>
+            <label>Booking date</label>
             <input
               type="date"
               name="booking_date"
@@ -145,17 +146,17 @@ const Bookings = () => {
             />
           </div>
           <div className="input-group">
-            <label>Статус</label>
+            <label>Status</label>
             <select
               name="status"
               value={newBooking.status}
               onChange={handleInputChange}
             >
-              <option value="Pending">В обработке</option>
+              <option value="Pending">Pending</option>
             </select>
           </div>
           <button type="submit" className="submit-btn">
-            {editingBooking ? "Редактировать бронь" : "Создать бронь"}
+            {editingBooking ? "Update booking" : "Add booking"}
           </button>
         </form>
       </div>
@@ -165,11 +166,11 @@ const Bookings = () => {
           <table>
             <thead>
               <tr>
-                <th>Клиент</th>
-                <th>Тур</th>
-                <th>Дата бронирования</th>
-                <th>Статус</th>
-                <th>Действия</th>
+                <th>Client</th>
+                <th>Tour</th>
+                <th>Booking date</th>
+                <th>Status</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -178,19 +179,19 @@ const Bookings = () => {
                   <td>{booking.ClientBooking ? booking.ClientBooking.email : "N/A"}</td>
                   <td>{booking.TourBooking ? booking.TourBooking.name : "N/A"}</td>
                   <td>{formatDate(booking.booking_date)}</td>
-                  <td>{["Pending", "pending"].includes(booking.status) ? "В обработке" : booking.status}</td>
+                  <td>{["Pending", "pending"].includes(booking.status) ? "Pending" : booking.status}</td>
                   <td className="action-buttons">
                     <button
                       className="action-btn"
                       onClick={() => handleEditBooking(booking)}
                     >
-                      Редактировать
+                      Edit
                     </button>
                     <button
                       className="action-btn"
                       onClick={() => handleDeleteBooking(booking.id)}
                     >
-                      Удалить
+                      Delete
                     </button>
                   </td>
                 </tr>

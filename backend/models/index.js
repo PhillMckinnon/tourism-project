@@ -9,7 +9,7 @@ Tour.belongsTo(Country, { foreignKey: 'country_id', as: 'TourCountry' });
 Bookings.belongsTo(Client, { foreignKey: 'client_id', as: 'ClientBooking' });
 Bookings.belongsTo(Tour, { foreignKey: 'tour_id', as: 'TourBooking' });
 
-sequelize.sync({  force: false }) // This should sync your models and their relations
+sequelize.sync({  force: false }) 
     .then(() => console.log('Success!'))
     .catch(err => console.error('Error, error text:', err));
 

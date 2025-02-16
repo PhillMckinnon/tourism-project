@@ -6,15 +6,14 @@ const clientRoutes = require('./routes/clientRoutes');
 const tourRoutes = require('./routes/tourRoutes');
 const bookingRoutes = require('./routes/bookingRoutes');
 const authRoutes = require('./routes/authRoutes');
-
+require('dotenv').config();
 const sequelize = require('./config/db');  
 
-
+const allowed_origins = process.env.CORS_URLS.split(',');
 require("./models");
 
-// CORS Configuration
 app.use(cors({
-    origin: ['http://192.168.66.59:3000', "http://localhost:3000", "http://127.0.0.1:3000", "http://192.168.66.230" ],
+    origin: allowed_origins,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
 }));

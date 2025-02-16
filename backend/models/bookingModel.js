@@ -12,7 +12,7 @@ const Bookings = sequelize.define('Bookings', {
     client_id: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'clients', // Ensure this is correct
+            model: 'clients', 
             key: 'id',
         },
         allowNull: false,

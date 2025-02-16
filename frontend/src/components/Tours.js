@@ -100,40 +100,40 @@ const Tours = () => {
   return (
     <div className="form-container">
       <div className="form-card">
-        <h2 className="editing-heading">{editingTour ? "Редактировать тур" : "Добавить тур"}</h2>
+        <h2 className="editing-heading">{editingTour ? "Update tour" : "Add tour"}</h2>
         <form onSubmit={editingTour ? handleUpdateTour : handleCreateTour}>
           <div className="input-group">
-            <label>Название тура</label>
+            <label>Tour name</label>
             <input
               type="text"
               name="name"
               value={newTour.name}
-              placeholder="Введите имя тура"
+              placeholder="Tour name"
               onChange={handleInputChange}
             />
           </div>
           <div className="input-group">
-            <label>Описание</label>
+            <label>Description</label>
             <input
               type="text"
               name="description"
               value={newTour.description}
-              placeholder="Введите описание"
+              placeholder="Description"
               onChange={handleInputChange}
             />
           </div>
           <div className="input-group">
-            <label>Цена</label>
+            <label>Price $</label>
             <input
               type="number"
               name="price"
               value={newTour.price}
-              placeholder="Введите цену"
+              placeholder="Price"
               onChange={handleInputChange}
             />
           </div>
           <div className="input-group">
-            <label>Дата отправления</label>
+            <label>Departure date</label>
             <input
               type="date"
               name="departure_date"
@@ -142,7 +142,7 @@ const Tours = () => {
             />
           </div>
           <div className="input-group">
-            <label>Дата возвращения</label>
+            <label>Return date</label>
             <input
               type="date"
               name="return_date"
@@ -151,24 +151,24 @@ const Tours = () => {
             />
           </div>
           <div className="input-group">
-            <label>Доступен?</label>
+            <label>Available?</label>
             <select
               name="available"
               value={newTour.available}
               onChange={handleInputChange}
             >
-              <option value={true}>Доступен</option>
-              <option value={false}>Не доступен</option>
+              <option value={true}>Yes</option>
+              <option value={false}>No</option>
             </select>
           </div>
           <div className="input-group">
-            <label>Страна</label>
+            <label>Country</label>
             <select
               name="country_id"
               value={newTour.country_id}
               onChange={handleInputChange}
             >
-              <option value="">Выберите страну</option>
+              <option value="">Choose country</option>
               {countries.map((country) => (
                 <option key={country.id} value={country.id}>
                   {country.name}
@@ -178,7 +178,7 @@ const Tours = () => {
           </div>
 
           <button type="submit" className="submit-btn">
-            {editingTour ? "Обновить тур" : "Добавить тур"}
+            {editingTour ? "Update tour" : "Add tour"}
           </button>
         </form>
       </div>
@@ -188,13 +188,13 @@ const Tours = () => {
           <table>
             <thead>
               <tr>
-                <th>Название тура</th>
-                <th>Страна</th>
-                <th>Цена</th>
-                <th>Дата отправления</th>
-                <th>Дата возвращения</th>
-                <th>Доступен?</th>
-                <th>Действия</th>
+                <th>Tour name</th>
+                <th>Country</th>
+                <th>Price</th>
+                <th>Departure date</th>
+                <th>Return date</th>
+                <th>Available?</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -205,19 +205,19 @@ const Tours = () => {
                   <td>{tour.price}</td>
                   <td>{formatDate(tour.departure_date)}</td>
                   <td>{formatDate(tour.return_date)}</td>
-                  <td>{tour.available ? "Да" : "Нет"}</td>
+                  <td>{tour.available ? "Yes" : "No"}</td>
                   <td className="action-buttons">
                     <button
                       className="action-btn"
                       onClick={() => handleEditTour(tour)}
                     >
-                      Редактировать
+                      Edit
                     </button>
                     <button
                       className="action-btn"
                       onClick={() => handleDeleteTour(tour.id)}
                     >
-                      Удалить
+                      Delete
                     </button>
                   </td>
                 </tr>
