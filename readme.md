@@ -17,7 +17,7 @@ A full-stack web application for managing tours, bookings, and user interactions
 ### **Frontend (ReactJS + Bootstrap)**
 - **User Authentication**: Simple login and registration system.
 - **Admin Dashboard**: Admins can manage clients, bookings, countries, and tours.
-- **Client Page**: Users can view their profile and book available tours.
+- **Client Page**: Users can book available tours.
 - **Home Page**: Redirects to the login page if the user is not logged in.
 
 ### **Backend (Node.js + ExpressJS + PostgreSQL)**
