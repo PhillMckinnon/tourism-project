@@ -25,16 +25,6 @@ A full-stack web application for managing tours, bookings, and user interactions
 - **Admin Check**: Users are verified as admins before accessing the dashboard.
 - **Database**: Managed with **Sequelize ORM** for tours, bookings, and users.
 
----
-
-## **Pages**
-1. **Register**: Create a new account.
-2. **Login**: Log in to access the application, serves default page for cases when the user is not logged in.
-3. **Admin Dashboard**: Add/edit/delete clients, bookings, countries, and tours.
-4. **Client Page**: Book tours that are available.
-
----
-
 ## **Technologies**
 
 ### **Frontend**
