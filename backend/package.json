@@ -1,0 +1,21 @@
+{
+  "name": "tourism-project-backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.17.1",
+    "i18next": "^24.2.1",
+    "i18next-browser-languagedetector": "^8.0.2",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.13.1",
+    "pg-hstore": "^2.3.4",
+    "react-i18next": "^15.4.0",
+    "sequelize": "^6.37.5"
+  }
+}
