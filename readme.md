@@ -54,3 +54,11 @@ A full-stack web application for managing tours, bookings, and user interactions
 
 ## **Note**
 This project does not implement token-based security. Admins are verified by checking their role, and users are redirected to the login page if not authenticated. The backend can be interacted with directly via tools like Postman.
+
+## **📫Contact**
+
+For any questions or feedback, feel free to reach out to:
+
+    Email: phillipmckinnonwork@proton.me
+    GitHub: @PhillMckinnon 
+
